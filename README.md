@@ -38,9 +38,9 @@ The code for inferencing from the model is in [RSNA-Validation Inferences](https
 
 If you follow the steps outlined above and run the notebooks accordingly, you should be able to obtain a model of similar performance. There may be some slight differences because the validation dataset is created with a random seed, but overall the resulting model should be similar.
 
-There are many possible improvements that can be made to this baseline model. For one, the dataset is quite imbalanced with the majority of the images assessed as normal, and the resulting model would bias towards the majority class. This coulld be alleviated by weighing the training images according to their ratio in the dataset.
+There are many possible improvements that can be made to this baseline model. For one, the dataset is quite imbalanced with the majority of the images assessed as normal, and the resulting model would bias towards the majority class. This could be alleviated by weighing the training images according to their ratio in the dataset.
 
-Finally, the file structure of this project is very straight forward. I put all the notebooks, table (stored as .pkl files) and model (stored as .pth files) in the same level.
+Finally, the file structure of this project is very straight forward. I simply put all the notebooks, table (stored as .pkl files) and model (stored as .pth files) in the same level.
 
 ```bash
 ├──stage-1-train-images\ (images downloaded from competition website)
