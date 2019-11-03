@@ -40,15 +40,17 @@ There are many possible improvements that can be made to this baseline model. Fo
 
 Finally, the file structure of this project is very straight forward. I put all the notebooks, table (stored as .pkl files) and model (stored as .pth files) in the same level.
 
-|--stage-1-train-images\ (images download from competition website)
- --stage-1-train-images-npy\ (images created by RSNA-Create npy Images.ipynb)
- --RSNA-Exploratory Data Analysis Part 1.ipynb
- --RSNA-Exploratory Data Analysis Part 2.ipynb
- --RSNA-Exploratory Data Analysis Part 3.ipynb 	
- --RSNA-Create npy Images.ipynb
- --RSNA-Create Validation Dataset.ipynb
- --RSNA-Model Training.ipynb
- --rsna-data-table.pkl (created by RSNA-Exploratory Data Analysis Part 1.ipynb)
- --rsna-dicom-table.pkl (created by RSNA-Exploratory Data Analysis Part 2.ipynb)
- --rsna-train-table.pkl (created by RSNA-Create Validation Dataset.ipynb)
- --rsna-valid-table.pkl (created by RSNA-Create Validation Dataset.ipynb)
+```bash
+├──stage-1-train-images\ (images download from competition website)
+├──stage-1-train-images-npy\ (images created by RSNA-Create npy Images.ipynb)
+├──RSNA-Exploratory Data Analysis Part 1.ipynb
+├──RSNA-Exploratory Data Analysis Part 2.ipynb
+├──RSNA-Exploratory Data Analysis Part 3.ipynb 	
+├──RSNA-Create npy Images.ipynb
+├──RSNA-Create Validation Dataset.ipynb
+├──RSNA-Model Training.ipynb
+├──rsna-data-table.pkl (created by RSNA-Exploratory Data Analysis Part 1.ipynb)
+├──rsna-dicom-table.pkl (created by RSNA-Exploratory Data Analysis Part 2.ipynb)
+├──rsna-train-table.pkl (created by RSNA-Create Validation Dataset.ipynb)
+└──rsna-valid-table.pkl (created by RSNA-Create Validation Dataset.ipynb)
+```
