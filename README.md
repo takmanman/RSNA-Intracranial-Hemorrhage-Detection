@@ -24,6 +24,10 @@ The code for creating the validation dataset is in [RSNA-Create Validation Datas
 
 ## Model Building and Training
 
+To build a baseline model, I applied transfer learning to a pre-trained model, the weakly-supervised ResNeXt-101 32x8d (https://github.com/facebookresearch/WSL-Images). Essentially, I replaced the final fully-connected layer of the pre-trained model with a fully-connected layer that has six outputs, each corresponding to one of the labels: epidural, intraparenchymal, intraventricular, subarachnoid, subdural, any. Then I fine tuned the model with the training dataset. It takes about 5 hours to make one pass of the entire dataset with a Nvidia GeForce RTX 2060. I only trained for 3 epoches.
+
+The code for building and training the model is in [RSNA-Model Training](https://github.com/takmanman/RSNA-Intracranial-Hemorrhage-Detection/blob/master/RSNA-Model%20Training.ipynb)
+
 ## Inferencing
 
 ## Directory Structure
