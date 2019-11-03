@@ -30,4 +30,25 @@ The code for building and training the model is in [RSNA-Model Training](https:/
 
 ## Inferencing
 
-## Directory Structure
+After training the model, I tested its performance with the validation dataset. I then calculated the accuracy, precision and recall for the predictions regarding the presense of a hmorrahge as well as the type of hemorrahge. The code for inferencing from the model is in [RSNA-Validation Inferences](https://github.com/takmanman/RSNA-Intracranial-Hemorrhage-Detection/blob/master/RSNA-Validation%20Inferences.ipynb)
+
+## Conclusions
+
+If you follow the steps outlined above and run the notebooks accordingly, you should be able to obtain a model of similar performance. There may be some slight differences because the validation dataset is created with a random seed, but overall the resulting model should be similar.
+
+There are many possible improvements that can be made to this baseline model. For one, the dataset is quite imbalanced with the majority of the images assessed as normal, and the resulting model would bias towards the majority class. This coulld be alleviated by weighing the training images according to their ratio in the dataset.
+
+Finally, the file structure of this project is very straight forward. I put all the notebooks, table (stored as .pkl files) and model (stored as .pth files) in the same level.
+
+|--stage-1-train-images\ (images download from competition website)
+ --stage-1-train-images-npy\ (images created by RSNA-Create npy Images.ipynb)
+ --RSNA-Exploratory Data Analysis Part 1.ipynb
+ --RSNA-Exploratory Data Analysis Part 2.ipynb
+ --RSNA-Exploratory Data Analysis Part 3.ipynb 	
+ --RSNA-Create npy Images.ipynb
+ --RSNA-Create Validation Dataset.ipynb
+ --RSNA-Model Training.ipynb
+ --rsna-data-table.pkl (created by RSNA-Exploratory Data Analysis Part 1.ipynb)
+ --rsna-dicom-table.pkl (created by RSNA-Exploratory Data Analysis Part 2.ipynb)
+ --rsna-train-table.pkl (created by RSNA-Create Validation Dataset.ipynb)
+ --rsna-valid-table.pkl (created by RSNA-Create Validation Dataset.ipynb)
