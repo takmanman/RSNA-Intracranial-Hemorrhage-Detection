@@ -4,7 +4,7 @@ The code in this repo demonstrates how to build a baseline deep learning model t
 
 ## Exploratory Data Analysis
 
-As with any data science projects, a large part of effort is in the exploratory data analysis (EDA) and data preprocessing. In this particular training dataset, which you can download from the [competition website](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/), there are over 600000 DICOM images. They are all CT scans of the head, of which about one sixth were identified with some sort of hemorrhage. I have divided the EDA into three jupyter-notebooks:
+As with any data science projects, a large part of the effort is in the exploratory data analysis (EDA) and data preprocessing. In this particular training dataset, which you can download from the [competition website](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/), there are over 600000 DICOM images. They are all CT scans of the head, of which about one seventh were identified with some sort of hemorrhage. I have divided the EDA into three jupyter-notebooks:
 
 1. [RSNA-Exploratory Data Analysis Part 1](https://github.com/takmanman/RSNA-Intercranial-Hemorrhage-Detection/blob/master/RSNA-Exploratory%20Data%20Analysis%20Part%201.ipynb) In this notebook, we will look at the accompanying .csv file of the training dataset. We will find out what types of hemorrhage images are include and their relative distribution. We will also look for any oddity. In the end we will convert the data into data table that will be used for training the model.
 
@@ -18,19 +18,21 @@ The type of data preprocessing required is entirely dependent of the problem we 
 
 The code for creating the .npy files is in [RSNA-Create .npy Images](https://github.com/takmanman/RSNA-Intracranial-Hemorrhage-Detection/blob/master/RSNA-Create%20npy%20Images.ipynb)
 
-Before we move on to model training, we should create a validation dataset out of the training dataset. As some of the images were identified with mulitple types of hemorrhage, therefore, this is a multi-labeled dataset.  It is not trivial to maintain the exact same label distribution (e.g. same frequency for the combination of 'epidural' and 'intraventricular'). Nevertheless, I tried to make the label frequency as similar as I can between the new training and validation dataset.
+Before we move on to model training, we should create a validation dataset out of the training dataset. As some of the images were identified with mulitple types of hemorrhage, therefore, this is a multi-labeled dataset.  It is not trivial to maintain the exact same label distribution (e.g. same frequency for the combination of 'epidural' and 'intraventricular'). Nevertheless, I tried to make the label frequency as similar as I can between the training and validation datasets.
 
 The code for creating the validation dataset is in [RSNA-Create Validation Dataset](https://github.com/takmanman/RSNA-Intracranial-Hemorrhage-Detection/blob/master/RSNA-Create%20Validation%20Dataset.ipynb)
 
 ## Model Building and Training
 
-To build a baseline model, I applied transfer learning to a pre-trained model, the weakly-supervised ResNeXt-101 32x8d (https://github.com/facebookresearch/WSL-Images). Essentially, I replaced the final fully-connected layer of the pre-trained model with a fully-connected layer that has six outputs, each corresponding to one of the labels: epidural, intraparenchymal, intraventricular, subarachnoid, subdural, any. Then I fine tuned the model with the training dataset. It takes about 5 hours to make one pass of the entire dataset with a Nvidia GeForce RTX 2060. I only trained for 3 epoches.
+To build a baseline model, I applied transfer learning to a pre-trained model, the weakly-supervised ResNeXt-101 32x8d (https://github.com/facebookresearch/WSL-Images). Essentially, I replaced the final fully-connected layer of the pre-trained model, which has 1000 outputs, with a fully-connected layer that has six outputs, each corresponding to one of the labels: epidural, intraparenchymal, intraventricular, subarachnoid, subdural, any. Then I fine tuned the model with the training dataset. It takes about 5 hours to make one pass of the entire dataset with a Nvidia GeForce RTX 2060. I only trained for 3 epoches.
 
 The code for building and training the model is in [RSNA-Model Training](https://github.com/takmanman/RSNA-Intracranial-Hemorrhage-Detection/blob/master/RSNA-Model%20Training.ipynb)
 
 ## Inferencing
 
-After training the model, I tested its performance with the validation dataset. I then calculated the accuracy, precision and recall for the predictions regarding the presense of a hmorrahge as well as the type of hemorrahge. The code for inferencing from the model is in [RSNA-Validation Inferences](https://github.com/takmanman/RSNA-Intracranial-Hemorrhage-Detection/blob/master/RSNA-Validation%20Inferences.ipynb)
+After training the model, I tested its performance with the validation dataset. I then calculated the accuracy, precision and recall for the predictions made regarding the presense of a hmorrahge as well as the type of hemorrahge. 
+
+The code for inferencing from the model is in [RSNA-Validation Inferences](https://github.com/takmanman/RSNA-Intracranial-Hemorrhage-Detection/blob/master/RSNA-Validation%20Inferences.ipynb)
 
 ## Conclusions
 
@@ -41,8 +43,9 @@ There are many possible improvements that can be made to this baseline model. Fo
 Finally, the file structure of this project is very straight forward. I put all the notebooks, table (stored as .pkl files) and model (stored as .pth files) in the same level.
 
 ```bash
-├──stage-1-train-images\ (images download from competition website)
+├──stage-1-train-images\ (images downloaded from competition website)
 ├──stage-1-train-images-npy\ (images created by RSNA-Create npy Images.ipynb)
+├──stage-1-train.csv (downloaded from competition website)
 ├──RSNA-Exploratory Data Analysis Part 1.ipynb
 ├──RSNA-Exploratory Data Analysis Part 2.ipynb
 ├──RSNA-Exploratory Data Analysis Part 3.ipynb 	
