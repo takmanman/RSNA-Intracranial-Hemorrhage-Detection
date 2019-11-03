@@ -34,6 +34,14 @@ After training the model, I tested its performance with the validation dataset. 
 
 The code for inferencing from the model is in [RSNA-Validation Inferences](https://github.com/takmanman/RSNA-Intracranial-Hemorrhage-Detection/blob/master/RSNA-Validation%20Inferences.ipynb)
 
+The inferences from the validations dataset are given in the following table:
+
+|          | Normal | Epidural | Intraparenchymal | Intraventricular | Subarachnoid | Subdural  | Any      |
+| -------- | ------ |----------| ---------------- | ---------------- | ------------ | --------- | -------- | 
+| Accuracy |0.959   |0.997     |0.988             |0.992             |0.980         |0.970      |0.959     |
+| Precision|0.972   |0.489     |0.885             |0.831             |0.766         |0.739      |0.858     |
+| Recall   |0.981   |0.311     |0.753             |0.835             |0.584         |0.693      |0.802     |
+
 ## Conclusions
 
 If you follow the steps outlined above and run the notebooks accordingly, you should be able to obtain a model of similar performance. There may be some slight differences because the validation dataset is created with a random seed, but overall the resulting model should be similar.
