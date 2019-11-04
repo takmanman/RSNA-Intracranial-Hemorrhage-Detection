@@ -2,7 +2,7 @@
 
 The code in this repo demonstrates how to build a baseline deep learning model to detect different types of intracranial hemorrhage from CT scan images. The training data is from the Kaggle competition [RSNA Intracranial Hemorrhage Detection](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/). I will go through the usual steps of data science problem solving, which are exploratory data analysis, data preprocessing, model building and training, and inferencing.
 
-In the training dataset, which you can download from the [competition website](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/), there are over 600000 DICOM images. They are all CT scans of the head, of which about one seventh were identified with some sort of hemorrhage. A validation dataset was used to assess the performance of this baseline model and the inferences are given in the following table:
+The training dataset, which you can download from the [competition website](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/), has over 600000 DICOM images. They are all CT scans of the head, of which about one seventh were identified with some sort of hemorrhage. A validation dataset was used to assess the performance of this baseline model and the inferences are given in the following table:
 
 |          | Normal | Epidural | Intraparenchymal | Intraventricular | Subarachnoid | Subdural  | Any      |
 | -------- | ------ |----------| ---------------- | ---------------- | ------------ | --------- | -------- |
@@ -42,7 +42,7 @@ After training the model, I tested its performance with the validation dataset. 
 
 The code for inferencing from the model is in [RSNA-Validation Inferences](https://github.com/takmanman/RSNA-Intracranial-Hemorrhage-Detection/blob/master/RSNA-Validation%20Inferences.ipynb)
 
-The inferences from the validation dataset are given in the table at the top of the page:
+The inferences from the validation dataset are given in the table at the top of the page.
 
 ## Conclusions
 
