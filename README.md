@@ -2,7 +2,9 @@
 
 The code in this repo demonstrates how to build a baseline deep learning model to detect different types of intracranial hemorrhage from CT scan images. The training data is from the Kaggle competition [RSNA Intracranial Hemorrhage Detection](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/). I will go through the usual steps of data science problem solving, which are exploratory data analysis, data preprocessing, model building and training, and inferencing.
 
-The training dataset, which you can download from the [competition website](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/), has over 600000 DICOM images. They are all CT scans of the head, of which about one seventh were identified with some sort of hemorrhage. A validation dataset was used to assess the performance of this baseline model and the inferences are given in the following table:
+The training dataset, which you can download from the [competition website](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/), has over 600000 DICOM images. They are all CT scans of the head, of which about one seventh were identified with some sort of hemorrhage.
+
+A validation dataset was used to assess the performance of this baseline model and the inferences are given in the following table:
 
 |          | Normal | Epidural | Intraparenchymal | Intraventricular | Subarachnoid | Subdural  | Any      |
 | -------- | ------ |----------| ---------------- | ---------------- | ------------ | --------- | -------- |
